@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fly with the Angels</title>
+    <style>
+
+        * { margin:0; padding:0; } /* to remove the top and left whitespace */
+
+        html, body {
+            width:100%;
+            height:100%;
+            background-color: black;
+        } /* just to be sure these are full screen*/
+
+        #world {
+            display:block;
+            background-color: black;
+            margin: auto;
+            border: 2px solid #202;
+            cursor: crosshair;
+        }
+    </style>
+
+    <script type="text/javascript" src="js/screenfull.js"></script>
+
+    <script type="text/javascript">
+        // namespace
+        var Angels = function() {};
+    </script>
+
+    <script type="text/javascript" src="game/Bullet.js"></script>
+    <script type="text/javascript" src="game/Angel.js"></script>
+    <script type="text/javascript" src="game/Images.js"></script>
+    <script type="text/javascript" src="game/Keyboard.js"></script>
+    <script type="text/javascript" src="game/Game.js"></script>
+</head>
+<body>
+    <div id="worldDiv" style="margin-left: auto; margin-right: auto; padding: 10px;">
+        <canvas id="world" width="1000px" height="800px" >
+            This browser can not run this game (canvas support missing).
+        </canvas>
+    </div>
+
+    <script type="text/javascript">
+        if (screenfull) {
+            screenfull.request();
+        }
+
+        Angels.Images.init( Angels.Game.init);
+    </script>
+
+</body>
+</html>
